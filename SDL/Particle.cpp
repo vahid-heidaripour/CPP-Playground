@@ -10,17 +10,17 @@ namespace cpp_playground
 {
     Particle::Particle(): _x(0), _y(0) {
         _direction = (2 * M_PI * rand())/RAND_MAX;
-        _speed = (0.001 * rand())/RAND_MAX;
+        _speed = (0.0001 * rand())/RAND_MAX;
     }
 
     Particle::~Particle() {
     }
 
-    void Particle::update() {
+    void Particle::update(int interval) {
         double xspeed = _speed * cos(_direction);
         double yspeed = _speed * sin(_direction);
 
-        _x += xspeed;
-        _y += yspeed;
+        _x += xspeed * interval;
+        _y += yspeed * interval;
     }
 }

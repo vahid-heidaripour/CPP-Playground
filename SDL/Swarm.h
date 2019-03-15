@@ -15,11 +15,12 @@ namespace cpp_playground
 
     private:
         Particle * _pParticles;
+        int _lastTime;
 
     public:
         Swarm();
         virtual ~Swarm();
-        void update();
+        void update(int elapsed);
 
         const Particle * const getParticles() { return _pParticles; };
     };
