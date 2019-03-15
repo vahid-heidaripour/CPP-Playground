@@ -15,4 +15,12 @@ namespace cpp_playground
     {
         delete [] _pParticle;
     }
+
+    void Swarm::update()
+    {
+        for (int i = 0; i < Swarm::NPARTICLES; i++)
+        {
+            _pParticle[i].update();
+        }
+    }
 }

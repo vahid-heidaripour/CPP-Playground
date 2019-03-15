@@ -97,4 +97,9 @@ namespace cpp_playground
         SDL_DestroyWindow(_window);
         SDL_Quit();
     }
+
+    void Screen::clear()
+    {
+        memset(_buffer, 0, SCREEN_WIDTH * SCREEN_HEIGHT * sizeof(Uint32));
+    }
 }

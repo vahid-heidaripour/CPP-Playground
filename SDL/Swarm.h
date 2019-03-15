@@ -20,6 +20,7 @@ namespace cpp_playground
     public:
         Swarm();
         virtual ~Swarm();
+        void update();
 
         const Particle *const getParticles() { return _pParticle;};
     };
