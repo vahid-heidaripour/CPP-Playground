@@ -16,7 +16,7 @@ namespace cpp_playground
             return false;
         }
 
-        _window = SDL_CreateWindow("Particle Fire Explosion",
+        _window = SDL_CreateWindow("Particle Window",
                                     SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, SCREEN_WIDTH,
                                     SCREEN_HEIGHT, SDL_WINDOW_SHOWN);
 

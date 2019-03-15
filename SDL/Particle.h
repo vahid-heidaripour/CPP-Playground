@@ -11,8 +11,12 @@ namespace cpp_playground
         double _x;
         double _y;
 
+    private:
         double _speed;
         double _direction;
+
+    private:
+        void init();
 
     public:
         Particle();
