@@ -52,17 +52,30 @@ namespace cpp_playground
 
         memset(_buffer, 0xFF, SCREEN_WIDTH * SCREEN_HEIGHT * sizeof(Uint32));
 
-        for (int i = 0; i < SCREEN_WIDTH * SCREEN_HEIGHT; i++)
-        {
-            _buffer[i] = 0xFFFF00FF;
-        }
+        return true;
+    }
 
+    void Screen::setPixel(int x, int y, Uint8 red, Uint8 green, Uint8 blue)
+    {
+        Uint32 color = 0;
+
+        color += red;
+        color <<= 8;
+        color += green;
+        color <<= 8;
+        color += blue;
+        color <<= 8;
+        color += 0xFF;
+
+        _buffer[(y * SCREEN_WIDTH) + x] = color;
+    }
+
+    void Screen::update()
+    {
         SDL_UpdateTexture(_texture, NULL, _buffer, SCREEN_WIDTH * sizeof(Uint32));
         SDL_RenderClear(_renderer);
         SDL_RenderCopy(_renderer, _texture, NULL, NULL);
         SDL_RenderPresent(_renderer);
-
-        return true;
     }
 
     bool Screen::processEvents()
