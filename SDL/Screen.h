@@ -18,7 +18,8 @@ namespace cpp_playground
         SDL_Window *_window;
         SDL_Renderer *_renderer;
         SDL_Texture *_texture;
-        Uint32 *_buffer;
+        Uint32 *_buffer1;
+        Uint32 *_buffer2;
 
     public:
         Screen();
@@ -28,6 +29,7 @@ namespace cpp_playground
         bool processEvents();
         void close();
         void clear();
+        void boxBlur();
     };
 }
 
