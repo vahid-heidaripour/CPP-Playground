@@ -4,23 +4,18 @@
 
 #include "Swarm.h"
 
-namespace cpp_playground
-{
-    Swarm::Swarm()
-    {
-        _pParticle = new Particle[NPARTICLES];
+namespace cpp_playground {
+    Swarm::Swarm() {
+        _pParticles = new Particle[NPARTICLES];
     }
 
-    Swarm::~Swarm()
-    {
-        delete [] _pParticle;
+    Swarm::~Swarm() {
+        delete[] _pParticles;
     }
 
-    void Swarm::update()
-    {
-        for (int i = 0; i < Swarm::NPARTICLES; i++)
-        {
-            _pParticle[i].update();
+    void Swarm::update() {
+        for (int i = 0; i < Swarm::NPARTICLES; i++) {
+            _pParticles[i].update();
         }
     }
 }

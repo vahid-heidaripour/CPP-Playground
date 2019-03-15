@@ -7,22 +7,17 @@
 
 namespace cpp_playground
 {
-    class Particle
-    {
+    struct Particle {
+        double _x;
+        double _y;
+
+        double _speed;
+        double _direction;
+
     public:
         Particle();
         virtual ~Particle();
         void update();
-        double getX() { return _x;};
-        double getY() { return _y;};
-        double getXSpeed() { return _xspeed;};
-        double getYSpeed() { return _yspeed;};
-
-    private:
-        double _x;
-        double _y;
-        double _xspeed;
-        double _yspeed;
     };
 }
 

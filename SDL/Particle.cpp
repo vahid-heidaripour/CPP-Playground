@@ -4,32 +4,23 @@
 
 #include "Particle.h"
 #include <stdlib.h>
+#include <math.h>
 
 namespace cpp_playground
 {
-    Particle::Particle()
-    {
-        _x = ((2.0 * rand()) / RAND_MAX) - 1;
-        _y = ((2.0 * rand()) / RAND_MAX) - 1;
-
-        _xspeed = 0.001 * (((2.0 * rand()) / RAND_MAX) - 1);
-        _yspeed = 0.001 * (((2.0 * rand()) / RAND_MAX) - 1);
+    Particle::Particle(): _x(0), _y(0) {
+        _direction = (2 * M_PI * rand())/RAND_MAX;
+        _speed = (0.001 * rand())/RAND_MAX;
     }
 
-    Particle::~Particle()
-    {
-
+    Particle::~Particle() {
     }
 
-    void Particle::update()
-    {
-        _x += _xspeed;
-        _y += _yspeed;
+    void Particle::update() {
+        double xspeed = _speed * cos(_direction);
+        double yspeed = _speed * sin(_direction);
 
-        if (_x <= -1.0 || _x >= 1.0)
-            _xspeed = -_xspeed;
-
-        if (_y <= -1.0 || _y >= 1.0)
-            _yspeed = -_yspeed;
+        _x += xspeed;
+        _y += yspeed;
     }
 }

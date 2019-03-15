@@ -9,20 +9,19 @@
 
 namespace cpp_playground
 {
-    class Swarm
-    {
+    class Swarm {
     public:
-        const static int NPARTICLES = 1000;
+        const static int NPARTICLES = 5000;
 
     private:
-        Particle *_pParticle;
+        Particle * _pParticles;
 
     public:
         Swarm();
         virtual ~Swarm();
         void update();
 
-        const Particle *const getParticles() { return _pParticle;};
+        const Particle * const getParticles() { return _pParticles; };
     };
 }
 

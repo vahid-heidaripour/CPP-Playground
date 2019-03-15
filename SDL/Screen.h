@@ -9,8 +9,7 @@
 
 namespace cpp_playground
 {
-    class Screen
-    {
+    class Screen {
     public:
         const static int SCREEN_WIDTH = 800;
         const static int SCREEN_HEIGHT = 600;
