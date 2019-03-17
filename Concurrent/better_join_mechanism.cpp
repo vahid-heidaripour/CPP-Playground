@@ -1,5 +1,5 @@
 #include <iostream>
-#include <thread>
+#include "common.h"
 
 void foo()
 {
@@ -15,15 +15,12 @@ void other_operations()
 int main(int argc, char* argv[])
 {
     std::thread foo_thread(foo);
+    thread_guard tg(foo_thread);
     try {
         other_operations();
-        foo_thread.join();
     }
-    catch (...) {
-        foo_thread.join();
-    }
-
-
+    catch (...)
+    {}
 
     return 0;
 }

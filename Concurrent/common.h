@@ -19,8 +19,8 @@ public:
             t.join();
     }
 
-    thread_guard(thread_guard &const) = delete;
-    thread_guard &operator= (thread_guard &const) = delete;
+    thread_guard(const thread_guard &) = delete;
+    thread_guard &operator= (const thread_guard &) = delete;
 };
 
 #endif
