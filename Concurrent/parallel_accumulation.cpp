@@ -67,5 +67,7 @@ int main(int argc, char* argv[])
     int res_val = parallel_accumulate<int*, int>(my_array, my_array + size, ref);
     printf("Accumulated value: %d \n", res_val);
 
+    delete [] my_array;
+
     return 0;
 }
