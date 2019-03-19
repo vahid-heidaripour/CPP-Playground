@@ -8,9 +8,12 @@ std::mutex m;
 
 void add_to_list(int const &x)
 {
-    m.lock();
-    my_list.push_front(x);
-    m.unlock();
+    //m.lock();
+    //my_list.push_front(x);
+    //m.unlock();
+
+    std::lock_guard<std::mutex> lg(m);
+    my_list.push_back(x);
 }
 
 void size()
