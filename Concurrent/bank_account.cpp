@@ -32,12 +32,12 @@ public:
 
     void transfer(bank_account& from, bank_account& to, double amount)
     {
-        std::lock_guard<std::mutex> lg_1(from.m);
-        std::cout << "lock for " << from.name << " account acquire by" << std::this_thread::get_id();
-        std::this_thread::sleep_for(std::chrono::milliseconds(1000));
+        std::cout << std::this_thread::get_id() << " hold the lock for both mutex \n";
 
-        std::cout << "waiting to acquire lock for " << to.name << " account by " << std::this_thread::get_id();
-        std::lock_guard<std::mutex> lg_2(to.m);
+        std::unique_lock<std::mutex> ul_1(from.m, std::defer_lock);
+        std::unique_lock<std::mutex> ul_2(to.m, std::defer_lock);
+
+        std::lock(ul_1, ul_2);
 
         from.balance -= amount;
         to.balance += amount;
