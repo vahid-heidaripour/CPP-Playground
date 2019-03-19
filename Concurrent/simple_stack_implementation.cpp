@@ -8,6 +8,26 @@ class thread_safe_stack
 {
     std::stack<T> stk;
     std::mutex m;
+
+    void push(T element)
+    {
+
+    }
+
+    void pop()
+    {
+
+    }
+
+    bool empty()
+    {
+
+    }
+
+    size_t size()
+    {
+
+    }
 };
 
 int main(int argc, char* argv[])
