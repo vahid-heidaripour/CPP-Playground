@@ -3,52 +3,39 @@
 #include <thread>
 #include <string>
 #include <chrono>
+#include <condition_variable>
 
 bool have_i_arrived = false;
-int distance_my_destination = 10;
+int total_distance = 10;
 int distance_covered = 0;
+std::condition_variable cv;
+std::mutex m;
 
-bool keep_driving()
+void keep_moving()
 {
     while (true)
     {
         std::this_thread::sleep_for(std::chrono::milliseconds(1000));
         distance_covered++;
-    }
 
-    return false;
+        if (distance_covered == total_distance)
+            cv.notify_one();
+    }
 }
 
-void keep_awake_all_night()
+void ask_driver_to_wake_up()
 {
-    while (distance_covered < distance_my_destination)
-    {
-        std::cout << "keep check, whether I am there \n";
-        std::this_thread::sleep_for(std::chrono::milliseconds(1000));
-    }
-
+    std::unique_lock<std::mutex> ul(m);
+    cv.wait(ul, []{ return distance_covered == total_distance;});
     std::cout << "finally I am there, distance_covered = " << distance_covered << std::endl;
-}
-
-void set_the_alarm_and_take_nap()
-{
-    if (distance_covered < distance_my_destination)
-    {
-        std::cout << "let me take a nap \n";
-        std::this_thread::sleep_for(std::chrono::milliseconds(10000));
-    }
-
-    std::cout << "finally I am there, distance covered = " << distance_covered << std::endl;
 }
 
 int main(int argc, char* argv[])
 {
-    std::thread driver_thread(keep_driving);
-    std::thread keep_awake_thread(keep_awake_all_night);
-    std::thread set_alarm_thread(set_the_alarm_and_take_nap);
+    std::thread driver_thread(keep_moving);
+    std::thread passenger_thread(ask_driver_to_wake_up);
 
-    keep_awake_thread.join();
-    set_alarm_thread.join();
+    passenger_thread.join();
     driver_thread.join();
 
     return 0;
