@@ -14,10 +14,7 @@ class thread_safe_queue
 
 public:
     thread_safe_queue() {}
-    thread_safe_queue(thread_safe_queue const& other_queue)
-    {
-
-    }
+    thread_safe_queue(thread_safe_queue const& other_queue) {}
 
     void push(T& value)
     {
@@ -60,7 +57,8 @@ public:
 
     size_t size()
     {
-
+        std::lock_guard<std::mutex> lg(m);
+        queue.size();
     }
 };
 
