@@ -25,5 +25,13 @@ void set_the_alarm_and_take_nap()
 
 int main(int argc, char* argv[])
 {
+    std::thread driver_thread(keep_driving);
+    std::thread keep_awake_thread(keep_awake_all_night);
+    std::thread set_alarm_thread(set_the_alarm_and_take_nap);
+
+    keep_awake_thread.join();
+    set_alarm_thread.join();
+    driver_thread.join();
+
     return 0;
 }
