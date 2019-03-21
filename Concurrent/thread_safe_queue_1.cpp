@@ -2,6 +2,7 @@
 #include <memory>
 #include <condition_variable>
 #include <thread>
+#include <mutex>
 
 template <typename T>
 class sequential_queue
@@ -20,6 +21,17 @@ class sequential_queue
     std::unique_ptr<node> head;
     node* tail;
 
+    std::mutex head_mutex;
+    std::mutex tail_mutex;
+
+    std::condition_variable cv;
+
+    node* get_tail()
+    {
+        std::lock_guard<std::mutex> lg(tail_mutex);
+        return tail;
+    }
+
 public:
     sequential_queue() : head(new node), tail(head.get())
     {
@@ -29,17 +41,23 @@ public:
     void push(T value)
     {
         std::shared_ptr<T> new_data(std::make_shared<T>(std::move(value)));
-        tail->data = new_data;
-
         std::unique_ptr<node> p(new node);
         node* const new_tail = p.get();
-        tail->next = std::move(p);
-        tail = new_tail;
+
+        {
+            std::lock_guard<std::mutex> lgt(tail_mutex);
+            tail->data = new_data;
+            tail->next = std::move(p);
+            tail = new_tail;
+        }
+
+        cv.notify_one();
     }
 
     std::shared_ptr<T> pop()
     {
-        if (head.get() == tail)
+        std::lock_guard<std::mutex> lg(head_mutex);
+        if (head.get() == get_tail())
         {
             return std::shared_ptr<T>();
         }
