@@ -12,7 +12,7 @@ char generateRandomOperator()
     if (coin == 1)
         return '+';
     else
-        return '+';
+        return '#';
 }
 
 int generateRandomId(int max)
