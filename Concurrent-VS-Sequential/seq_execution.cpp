@@ -2,7 +2,7 @@
 #include <array>
 #include <fstream>
 
-std::array<unsigned long long int, 10> _finalArr;
+std::array<int, 10> _finalArr;
 
 void initFinalArray()
 {
@@ -29,17 +29,17 @@ int main(int argc, char* argv[])
     std::ifstream infile;
     infile.open(argv[1]);
 
-    int first, second;
-    char op;
+    // 0 is add and 1 is swap
+    int first, second, op;
 
     while (infile >> first >> second >> op)
     {
         switch (op)
         {
-            case '+':
+            case 0:
                 _finalArr[first] += _finalArr[second];
                 break;
-            case '#':
+            case 1:
             {
                 auto temp = _finalArr[first];
                 _finalArr[first] = _finalArr[second];

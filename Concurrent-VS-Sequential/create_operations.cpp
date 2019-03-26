@@ -5,14 +5,16 @@
 std::random_device rd;
 std::default_random_engine drg(rd());
 
-char generateRandomOperator()
+std::ofstream outfile;
+
+int generateRandomOperator()
 {
     std::uniform_int_distribution<int> uniform_dist(1, 2);
     int coin = uniform_dist(drg);
     if (coin == 1)
-        return '+';
+        return 0;
     else
-        return '#';
+        return 1;
 }
 
 int generateRandomId(int max)
@@ -21,17 +23,13 @@ int generateRandomId(int max)
     return uniform_dist(drg);
 }
 
-std::string generateCommand()
+void generateCommand()
 {
     int firstRandomId = generateRandomId(9);
     int secondRandomId = generateRandomId(9);
-    char randomOperator = generateRandomOperator();
+    int randomOperator = generateRandomOperator();
 
-    return std::to_string(firstRandomId) +
-           " " +
-           std::to_string(secondRandomId) +
-           " " +
-           std::string(1, randomOperator);
+    outfile << firstRandomId << " " << secondRandomId << " " << randomOperator << std::endl;
 }
 
 int main(int argc, char* argv[])
@@ -42,14 +40,10 @@ int main(int argc, char* argv[])
         return 1;
     }
 
-    std::ofstream outfile;
     outfile.open("command_list");
 
     for (int i = 0; i < atoi(argv[1]); ++i)
-        if (i != atoi(argv[1]) - 1)
-            outfile << generateCommand() << std::endl;
-        else
-            outfile << generateCommand();
+        generateCommand();
 
     outfile.close();
 
