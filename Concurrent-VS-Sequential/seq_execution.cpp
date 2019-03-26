@@ -1,8 +1,18 @@
 #include <iostream>
 #include <array>
 #include <fstream>
+#include <vector>
 
 std::array<int, 10> _finalArr;
+
+struct operations
+{
+    int f;
+    int s;
+    int o;
+};
+
+std::vector<operations> _opVec;
 
 void initFinalArray()
 {
@@ -14,6 +24,29 @@ void printFinalArr()
     for (auto& f : _finalArr)
         std::cout << f << " ";
     std::cout << std::endl;
+}
+
+void doOperation(operations oper)
+{
+    int first = oper.f;
+    int second = oper.s;
+    int op = oper.o;
+
+    switch (op)
+    {
+        case 0:
+            _finalArr[first] += _finalArr[second];
+            break;
+        case 1:
+        {
+            auto temp = _finalArr[first];
+            _finalArr[first] = _finalArr[second];
+            _finalArr[second] = temp;
+        }
+            break;
+        default:
+            break;
+    }
 }
 
 int main(int argc, char* argv[])
@@ -34,22 +67,19 @@ int main(int argc, char* argv[])
 
     while (infile >> first >> second >> op)
     {
-        switch (op)
-        {
-            case 0:
-                _finalArr[first] += _finalArr[second];
-                break;
-            case 1:
-            {
-                auto temp = _finalArr[first];
-                _finalArr[first] = _finalArr[second];
-                _finalArr[second] = temp;
-            }
-                break;
-            default:
-                break;
-        }
+        operations operation;
+        operation.f = first;
+        operation.s = second;
+        operation.o = op;
+
+        _opVec.push_back(operation);
     }
+
+    for (auto& v : _opVec)
+    {
+        doOperation(v);
+    }
+
 
     infile.close();
 
