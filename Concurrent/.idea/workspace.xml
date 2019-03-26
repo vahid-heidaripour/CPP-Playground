@@ -10,7 +10,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="65f94b6e-2334-4147-8ef2-b6843a5d0795" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../OpenGL/OpenGL-Test/OpenGL-Test.xcodeproj/project.xcworkspace/xcuserdata/vhpl.xcuserdatad/UserInterfaceState.xcuserstate" beforeDir="false" afterPath="$PROJECT_DIR$/../OpenGL/OpenGL-Test/OpenGL-Test.xcodeproj/project.xcworkspace/xcuserdata/vhpl.xcuserdatad/UserInterfaceState.xcuserstate" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -22,10 +21,10 @@
   <component name="FileEditorManager">
     <leaf>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/mem_ord_seq_cst.cpp">
+        <entry file="file://$PROJECT_DIR$/mem_order_relax.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="663">
-              <caret line="51" column="19" selection-start-line="51" selection-start-column="19" selection-end-line="51" selection-end-column="19" />
+            <state relative-caret-position="234">
+              <caret line="18" column="40" selection-start-line="18" selection-start-column="40" selection-end-line="18" selection-end-column="40" />
             </state>
           </provider>
         </entry>
@@ -45,6 +44,7 @@
         <option value="$PROJECT_DIR$/atomic_pointer.cpp" />
         <option value="$PROJECT_DIR$/atomic_pointer_2.cpp" />
         <option value="$PROJECT_DIR$/mem_ord_seq_cst.cpp" />
+        <option value="$PROJECT_DIR$/mem_order_relax.cpp" />
       </list>
     </option>
   </component>
@@ -102,12 +102,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1553588032270</updated>
-      <workItem from="1553588034965" duration="5253000" />
+      <workItem from="1553588034965" duration="6120000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5253000" />
+    <option name="totallyTimeSpent" value="6120000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1680" y="-501" width="1080" height="1897" extended-state="6" />
@@ -118,7 +118,7 @@
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Database Changes" />
       <window_info anchor="bottom" id="Version Control" />
-      <window_info anchor="bottom" id="Terminal" visible="true" weight="0.32963988" />
+      <window_info active="true" anchor="bottom" id="Terminal" visible="true" weight="0.32963988" />
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
@@ -184,8 +184,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/mem_ord_seq_cst.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="663">
-          <caret line="51" column="19" selection-start-line="51" selection-start-column="19" selection-end-line="51" selection-end-column="19" />
+        <state relative-caret-position="702">
+          <caret line="54" column="1" lean-forward="true" selection-start-line="54" selection-start-column="1" selection-end-line="54" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mem_order_relax.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="18" column="40" selection-start-line="18" selection-start-column="40" selection-end-line="18" selection-end-column="40" />
         </state>
       </provider>
     </entry>
