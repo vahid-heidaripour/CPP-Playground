@@ -1,21 +1,21 @@
-#include <array>
-#include "common.h"
+#include <list>
+#include "thread_pool_with_local_work_queue.h"
 
-std::array<int, 10> _finalArr;
+std::list<int> _finalList;
 
-void initFinalArray()
+void initFinalList()
 {
-    _finalArr = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+    _finalList = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
 }
 
-void printFinalArr()
+void printFinalList()
 {
-    for (auto& f : _finalArr)
+    for (auto f : _finalList)
         std::cout << f << " ";
     std::cout << std::endl;
 }
 
-void doOperation(operations oper)
+/*void doOperation(operations oper)
 {
     int first = oper.firstOperand;
     int second = oper.secondOperand;
@@ -36,6 +36,12 @@ void doOperation(operations oper)
         default:
             break;
     }
+}*/
+
+void doOperation(std::vector<operations> oper)
+{
+    thread_pool_with_local_work_queue pool;
+
 }
 
 int main(int argc, char* argv[])
@@ -46,16 +52,13 @@ int main(int argc, char* argv[])
         return 1;
     }
 
-    initFinalArray();
+    initFinalList();
 
     std::vector<operations> opVec(read_operations_file(argv[1]));
 
-    for (auto& v : opVec)
-    {
-        doOperation(v);
-    }
+    // do operation
 
-    printFinalArr();
+    printFinalList();
 
     return 0;
 }
