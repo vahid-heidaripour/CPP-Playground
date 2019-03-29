@@ -42,6 +42,7 @@ void doOperation(std::vector<operations> oper)
 {
     thread_pool_with_local_work_queue pool;
 
+
 }
 
 int main(int argc, char* argv[])

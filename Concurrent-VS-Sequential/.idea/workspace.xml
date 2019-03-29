@@ -10,8 +10,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="47e64dc1-a11e-48ab-9f11-126abfddfd61" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/vhpl.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/con_execution.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/con_execution.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/seq_execution.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/seq_execution.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Concurrent/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Concurrent/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../OpenGL/OpenGL-Test/OpenGL-Test.xcodeproj/project.xcworkspace/xcuserdata/vhpl.xcuserdatad/UserInterfaceState.xcuserstate" beforeDir="false" afterPath="$PROJECT_DIR$/../OpenGL/OpenGL-Test/OpenGL-Test.xcodeproj/project.xcworkspace/xcuserdata/vhpl.xcuserdatad/UserInterfaceState.xcuserstate" afterDir="false" />
@@ -27,68 +27,26 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/seq_execution.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="650">
-              <caret line="50" selection-start-line="50" selection-end-line="51" />
+            <state relative-caret-position="338">
+              <caret line="26" column="49" selection-start-line="26" selection-start-column="49" selection-end-line="26" selection-end-column="49" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/thread_safe_queue.h">
+        <entry file="file://$PROJECT_DIR$/con_execution.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="17" column="6" selection-start-line="17" selection-start-column="6" selection-end-line="17" selection-end-column="6" />
+            <state relative-caret-position="572">
+              <caret line="44" selection-start-line="44" selection-end-line="44" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/con_execution.cpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="559">
-              <caret line="43" column="4" selection-start-line="43" selection-start-column="4" selection-end-line="43" selection-end-column="4" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/thread_pool_with_local_work_queue.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-95">
-              <caret line="67" column="28" selection-start-line="67" selection-start-column="12" selection-end-line="67" selection-end-column="28" />
-              <folding>
-                <element signature="e#1062#1085#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/common.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="429">
-              <caret line="33" selection-start-line="33" selection-end-line="33" />
-              <folding>
-                <element signature="e#725#737#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/create_operations.cpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="403">
-              <caret line="31" column="91" selection-start-line="31" selection-start-column="91" selection-end-line="31" selection-end-column="91" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/command_list">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="65">
-              <caret line="5" selection-start-line="5" selection-end-line="5" />
+            <state relative-caret-position="386">
+              <caret line="98" column="110" selection-start-line="98" selection-start-column="94" selection-end-line="98" selection-end-column="110" />
             </state>
           </provider>
         </entry>
@@ -99,6 +57,8 @@
     <findStrings>
       <find />
       <find>pool</find>
+      <find>do_sort</find>
+      <find>local_work_queue</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -111,9 +71,9 @@
         <option value="$PROJECT_DIR$/thread_safe_queue.h" />
         <option value="$PROJECT_DIR$/main.cpp" />
         <option value="$PROJECT_DIR$/common.h" />
-        <option value="$PROJECT_DIR$/seq_execution.cpp" />
         <option value="$PROJECT_DIR$/thread_pool_with_local_work_queue.h" />
         <option value="$PROJECT_DIR$/con_execution.cpp" />
+        <option value="$PROJECT_DIR$/seq_execution.cpp" />
       </list>
     </option>
   </component>
@@ -129,6 +89,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -140,7 +101,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -172,18 +132,20 @@
       <option name="presentableId" value="Default" />
       <updated>1553630298799</updated>
       <workItem from="1553630299926" duration="1682000" />
-      <workItem from="1553675764414" duration="6062000" />
+      <workItem from="1553675764414" duration="6977000" />
+      <workItem from="1553706272743" duration="1282000" />
+      <workItem from="1553786781251" duration="191000" />
+      <workItem from="1553848508364" duration="208000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7744000" />
+    <option name="totallyTimeSpent" value="10340000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1680" y="-524" width="1080" height="1920" extended-state="0" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.22543353" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.3699422" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -195,7 +157,7 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Database Changes" order="7" />
       <window_info anchor="bottom" id="Version Control" order="8" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.1745946" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.15027027" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -207,34 +169,12 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/create_operations.cpp">
+    <entry file="file://$PROJECT_DIR$/4_thread_pool_with_local_work_queue.h" />
+    <entry file="file://$PROJECT_DIR$/main.cpp" />
+    <entry file="file://$PROJECT_DIR$/thread_safe_queue.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="403">
-          <caret line="31" column="91" selection-start-line="31" selection-start-column="91" selection-end-line="31" selection-end-column="91" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/4_thread_pool_with_local_work_queue.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="546">
-          <caret line="42" column="34" lean-forward="true" selection-start-line="42" selection-start-column="34" selection-end-line="42" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="78">
-          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-          <folding>
-            <element signature="e#0#19#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/command_list">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="65">
-          <caret line="5" selection-start-line="5" selection-end-line="5" />
+        <state relative-caret-position="221">
+          <caret line="17" column="6" selection-start-line="17" selection-start-column="6" selection-end-line="17" selection-end-column="6" />
         </state>
       </provider>
     </entry>
@@ -248,34 +188,38 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/thread_safe_queue.h">
+    <entry file="file://$PROJECT_DIR$/create_operations.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="17" column="6" selection-start-line="17" selection-start-column="6" selection-end-line="17" selection-end-column="6" />
+        <state relative-caret-position="403">
+          <caret line="31" column="91" selection-start-line="31" selection-start-column="91" selection-end-line="31" selection-end-column="91" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/command_list">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="65">
+          <caret line="5" selection-start-line="5" selection-end-line="5" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/seq_execution.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="650">
-          <caret line="50" selection-start-line="50" selection-end-line="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/thread_pool_with_local_work_queue.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-95">
-          <caret line="67" column="28" selection-start-line="67" selection-start-column="12" selection-end-line="67" selection-end-column="28" />
-          <folding>
-            <element signature="e#1062#1085#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="338">
+          <caret line="26" column="49" selection-start-line="26" selection-start-column="49" selection-end-line="26" selection-end-column="49" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/con_execution.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="559">
-          <caret line="43" column="4" selection-start-line="43" selection-start-column="4" selection-end-line="43" selection-end-column="4" />
+        <state relative-caret-position="572">
+          <caret line="44" selection-start-line="44" selection-end-line="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/thread_pool_with_local_work_queue.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="386">
+          <caret line="98" column="110" selection-start-line="98" selection-start-column="94" selection-end-line="98" selection-end-column="110" />
         </state>
       </provider>
     </entry>

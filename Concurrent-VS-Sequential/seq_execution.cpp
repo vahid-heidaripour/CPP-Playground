@@ -28,9 +28,7 @@ void doOperation(operations oper)
             break;
         case 1:
         {
-            auto temp = _finalArr[first];
-            _finalArr[first] = _finalArr[second];
-            _finalArr[second] = temp;
+            std::swap(_finalArr[first], _finalArr[second]);
         }
             break;
         default:
