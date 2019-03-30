@@ -1,5 +1,6 @@
 #include <stdio.h>
 
+/* function declaration - no memory allocation */
 int power(int m, int y);  /* x ^ y */
 /* if we don't write the definition of the function, it's not a problem */
 
@@ -13,6 +14,7 @@ int main()
     return 0;
 }
 
+/* function definition - memory allocation */
 int power(int base, int n)
 {
     int i, p;
