@@ -6,36 +6,6 @@
 #include <thread>
 #include <fstream>
 
-struct operations
-{
-    int firstOperand;
-    int secondOperand;
-    int oper; // 0 is add, 1 is swap
-};
-
-std::vector<operations> read_operations_file(char* filename)
-{
-    std::vector<operations> resultVec;
-    std::ifstream infile;
-    infile.open(filename);
-
-    int first, second, op;
-
-    while (infile >> first >> second >> op)
-    {
-        operations operation;
-        operation.firstOperand = first;
-        operation.secondOperand = second;
-        operation.oper = op;
-
-        resultVec.push_back(operation);
-    }
-
-    infile.close();
-
-    return resultVec;
-}
-
 class thread_guard {
 
 	std::thread & t;
