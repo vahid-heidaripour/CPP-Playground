@@ -98,7 +98,7 @@ public:
 
 thread_local std::unique_ptr<std::queue<function_wrapper>> thread_pool_with_local_work_queue::local_work_queue;
 
-/*template<typename T>
+template<typename T>
 struct sorter {
 
 	thread_pool_with_local_work_queue pool;
@@ -129,8 +129,8 @@ struct sorter {
 
 		result.splice(result.end(), new_higher);
 
-		//while(new_lower.wait_for(std::chrono::seconds(0))== std::future_status::timeout)
-		while (!new_lower._Is_ready())
+		//while (!new_lower._Is_ready())
+		while(new_lower.wait_for(std::chrono::seconds(0))== std::future_status::timeout)
 		{
 			pool.run_pending_task();
 		}
@@ -141,9 +141,9 @@ struct sorter {
 
 	}
 
-};*/
+};
 
-/*template<typename T>
+template<typename T>
 std::list<T> parallel_quick_sort(std::list<T> input)
 {
 	if (input.empty())
@@ -153,9 +153,9 @@ std::list<T> parallel_quick_sort(std::list<T> input)
 
 	sorter<T> s;
 	return s.do_sort(input);
-}*/
+}
 
-/*void run()
+void run()
 {
 	thread_pool_with_local_work_queue pool;
 	const int size = 800;
@@ -175,6 +175,6 @@ std::list<T> parallel_quick_sort(std::list<T> input)
 		std::cout << my_array.front() << std::endl;
 		my_array.pop_front();
 	}
-}*/
+}
 
 #endif //__THREAD_POOL_WITH_LOCAL_WORK_QUEUE_H__
