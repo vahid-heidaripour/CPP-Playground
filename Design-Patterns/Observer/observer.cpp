@@ -89,3 +89,8 @@ public:
             cout << "running in middle" << endl;
     }
 };
+
+int main()
+{
+    return 0;
+}
