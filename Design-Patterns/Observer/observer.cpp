@@ -92,5 +92,53 @@ public:
 
 int main()
 {
+    Car *car = new Car();
+
+    LeftObserver leftObserver(car);
+    RightObserver rightObserver(car);
+    MiddleObserver middleObserver(car);
+
+    cout << "hit left right button to drive a car in your city!!!" << endl;
+    cout << "l for left, r for right, c for center, and b for exit" << endl;
+
+    char pressButton;
+    bool breakLoop = false;
+
+    while (!breakLoop)
+    {
+        cin >> pressButton;
+
+        switch (pressButton)
+        {
+            case 108: // pressed l for left
+            {
+                car->setPosition(-1);
+                break;
+            }
+            case 99: // pressed c for center
+            {
+                car->setPosition(0);
+                break;
+            }
+            case 114: // pressed r for right
+            {
+                car->setPosition(1);
+                break;
+            }
+            case 98: // pressed b for break
+            {
+                breakLoop = true;
+                break;
+            }
+            default:
+            {
+                cout << "please drive carefully!!!" << endl;
+                break;
+            }
+        }
+    }
+
+    cout << "Bye..." << endl;
+
     return 0;
 }
