@@ -5,3 +5,6 @@
     - composition, creation, and representation of objects should be decoupled from the system
     - hide the complexity of creating new instance from the user
     - which classes to create are specified at runtime
+
+### Compile:
+g++ -std=c++14 prototype.cpp
