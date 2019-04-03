@@ -6,5 +6,10 @@
     - hide the complexity of creating new instance from the user
     - which classes to create are specified at runtime
 
+### Downsides:
+    - copying an object can be complicated
+    - circular references class can not be cloned
+    - over use of this might affect the performance
+
 ### Compile:
 g++ -std=c++14 prototype.cpp
