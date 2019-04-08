@@ -5,3 +5,16 @@
 #include <vector>
 
 using namespace std;
+
+template <typename T>
+T addAll(std::vector<T> list)
+{
+    T count = 0;
+
+    for (auto& elem : list)
+    {
+        count += elem;
+    }
+
+    return count;
+}
