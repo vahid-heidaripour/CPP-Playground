@@ -39,3 +39,16 @@ std::string addAll(std::vector<std::string> list)
 
     return strCount;
 }
+
+int main()
+{
+    vector<int> vecInt = {1, 2, 3, 4, 5};
+    vector<double> vecDouble = {1.0, 2.0, 3.0, 4.0, 5.0};
+    vector<string> vecString = {"abc"};
+
+    cout << addAll(vecInt) << endl;
+    cout << addAll(vecDouble) << endl;
+    cout << addAll(vecString) << endl;
+
+    return 0;
+}
