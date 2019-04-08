@@ -9,7 +9,10 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f01497c7-97c2-422e-b287-125f1dfa08db" name="Default Changelist" comment="" />
+    <list default="true" id="f01497c7-97c2-422e-b287-125f1dfa08db" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Design-Patterns/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Design-Patterns/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,21 +23,12 @@
     <option name="formatViaClangd" value="false" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/diamond_problem.cpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="585">
-              <caret line="45" column="25" lean-forward="true" selection-start-line="45" selection-start-column="25" selection-end-line="45" selection-end-column="25" />
-            </state>
-          </provider>
-        </entry>
-      </file>
+    <leaf>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/print_n_times_no_loop.cpp">
+        <entry file="file://$PROJECT_DIR$/template_specialization.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+            <state relative-caret-position="39">
+              <caret line="3" column="19" selection-start-line="3" selection-start-column="19" selection-end-line="3" selection-end-column="19" />
             </state>
           </provider>
         </entry>
@@ -56,20 +50,24 @@
         <option value="$PROJECT_DIR$/ANSI-C/bin_search.c" />
         <option value="$PROJECT_DIR$/diamond_problem.cpp" />
         <option value="$PROJECT_DIR$/print_n_times_no_loop.cpp" />
+        <option value="$PROJECT_DIR$/Design-Patterns/README.md" />
+        <option value="$PROJECT_DIR$/Design-Patterns/factory_design_pattern.cpp" />
+        <option value="$PROJECT_DIR$/template_specialization.cpp" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" fullScreen="true">
     <option name="x" value="1680" />
-    <option name="y" value="-501" />
+    <option name="y" value="-524" />
     <option name="width" value="1080" />
-    <option name="height" value="1897" />
+    <option name="height" value="1920" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -81,7 +79,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -114,18 +111,19 @@
       <option name="presentableId" value="Default" />
       <updated>1553858984893</updated>
       <workItem from="1553858986130" duration="8894000" />
-      <workItem from="1554218173934" duration="1096000" />
+      <workItem from="1554218173934" duration="2291000" />
+      <workItem from="1554714595742" duration="93000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="9990000" />
+    <option name="totallyTimeSpent" value="11278000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1680" y="-524" width="1080" height="1920" extended-state="6" />
+    <frame x="1680" y="-524" width="1080" height="1920" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25433525" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2591522" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -137,7 +135,7 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Database Changes" order="7" />
       <window_info anchor="bottom" id="Version Control" order="8" />
-      <window_info anchor="bottom" id="Terminal" order="9" visible="true" weight="0.5145946" />
+      <window_info anchor="bottom" id="Terminal" order="9" weight="0.5145946" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -187,17 +185,32 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/diamond_problem.cpp">
+    <entry file="file://$PROJECT_DIR$/Design-Patterns/factory_design_pattern.cpp" />
+    <entry file="file://$PROJECT_DIR$/print_n_times_no_loop.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="585">
-          <caret line="45" column="25" lean-forward="true" selection-start-line="45" selection-start-column="25" selection-end-line="45" selection-end-column="25" />
+        <state relative-caret-position="247">
+          <caret line="19" selection-start-line="19" selection-end-line="19" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/print_n_times_no_loop.cpp">
+    <entry file="file://$PROJECT_DIR$/Design-Patterns/README.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+        <state relative-caret-position="13">
+          <caret line="1" column="7" selection-start-line="1" selection-start-column="7" selection-end-line="1" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/diamond_problem.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="585">
+          <caret line="45" column="25" selection-start-line="45" selection-start-column="25" selection-end-line="45" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/template_specialization.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="39">
+          <caret line="3" column="19" selection-start-line="3" selection-start-column="19" selection-end-line="3" selection-end-column="19" />
         </state>
       </provider>
     </entry>
