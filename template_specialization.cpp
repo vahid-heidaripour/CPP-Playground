@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <vector>
+#include <sstream>
 
 using namespace std;
 
@@ -17,4 +18,24 @@ T addAll(std::vector<T> list)
     }
 
     return count;
+}
+
+template <>
+std::string addAll(std::vector<std::string> list)
+{
+    int count = 0;
+
+    for (const string& elem : list)
+    {
+        for (const char& chr : elem)
+        {
+            count += chr;
+        }
+    }
+
+    ostringstream ostr;
+    ostr << count;
+    string strCount = ostr.str();
+
+    return strCount;
 }
