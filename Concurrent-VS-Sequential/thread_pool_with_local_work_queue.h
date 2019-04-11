@@ -98,7 +98,7 @@ public:
 
 thread_local std::unique_ptr<std::queue<function_wrapper>> thread_pool_with_local_work_queue::local_work_queue;
 
-template<typename T>
+/*template<typename T>
 struct sorter {
 
 	thread_pool_with_local_work_queue pool;
@@ -165,7 +165,7 @@ void run()
 
 	for (size_t i = 0; i < size; i++)
 	{
-		my_array.push_back(rand());
+		my_array.push_back(rand() % 1000);
 	} 
 
 	my_array = parallel_quick_sort(my_array);
@@ -175,6 +175,6 @@ void run()
 		std::cout << my_array.front() << std::endl;
 		my_array.pop_front();
 	}
-}
+}*/
 
 #endif //__THREAD_POOL_WITH_LOCAL_WORK_QUEUE_H__

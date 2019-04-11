@@ -3,15 +3,15 @@
 
 #include <iostream>
 #include <array>
-#include <vector>
+#include <queue>
 
 class Operations
 {
 public:
     void setOperation(int first, int second, int op);
-    int getFirstOperand() const {return _firstOperand;};
-    int getSecondOperand() const {return _secondOperand;};
-    int getOperator() const {return _oper;};
+    int getFirstOperand() {return _firstOperand;};
+    int getSecondOperand() {return _secondOperand;};
+    int getOperator() {return _oper;};
 private:
     int _firstOperand, _secondOperand, _oper;
 };
@@ -22,7 +22,7 @@ public:
     Base();
     void resetList();
     void printList();
-    std::vector<Operations> readOperationsFile();
+    std::queue<Operations> readOperationsFile();
 
     int generateRandomOperator();
     int generateRandomId(int max);
@@ -32,11 +32,13 @@ public:
 
     void doSequentially();
     void doConcurrently();
+    void play();
 
 private:
 
     std::array<int, 10> _list;
     void doOperationSeq(Operations oper);
+    void doOperationCon(Operations oper);
 };
 
 #endif // __BASE_H__

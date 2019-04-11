@@ -1,12 +1,15 @@
 #include <iostream>
 #include <fstream>
+#include <chrono>
 #include "base.h"
+#include "thread_pool_with_local_work_queue.h"
+#include "simple_thread_pool.h"
 
 Base::Base()
 {
     resetList();
     generateCommand(10);
-    readOperationsFile();
+    printList();
 }
 
 void Operations::setOperation(int first, int second, int op)
@@ -28,9 +31,9 @@ void Base::printList()
     std::cout << std::endl;
 }
 
-std::vector<Operations> Base::readOperationsFile()
+std::queue<Operations> Base::readOperationsFile()
 {
-    std::vector<Operations> resVec;
+    std::queue<Operations> resQueue;
     std::ifstream infile;
     infile.open("command_list");
 
@@ -39,18 +42,17 @@ std::vector<Operations> Base::readOperationsFile()
     {
         Operations oper;
         oper.setOperation(first, second, op);
-        resVec.push_back(oper);
+        resQueue.push(oper);
     }
 
     infile.close();
 
-    return resVec;
+    return resQueue;
 }
 
 int Base::generateRandomOperator()
 {
     int coin = rand() % 2 + 1;
-            //uniform_dist(std::Random::get(1, 2));
     if (coin == 1)
         return 0;
     else
@@ -60,7 +62,6 @@ int Base::generateRandomOperator()
 int Base::generateRandomId(int max)
 {
     return rand() % max;
-    //uniform_dist(std::Random::get(0, max));
 }
 
 void Base::generateCommand(int numbers)
@@ -90,17 +91,49 @@ bool Base::isFileExists(const std::string &name)
 
 void Base::doSequentially()
 {
-    std::vector<Operations> opVec = readOperationsFile();
+    std::queue<Operations> opQueue = readOperationsFile();
 
-    for (auto& v : opVec)
+    while (!opQueue.empty())
     {
-        doOperationSeq(v);
+        doOperationSeq(opQueue.front());
+        opQueue.pop();
     }
 }
 
 void Base::doConcurrently()
 {
+    thread_pool_with_local_work_queue pool;
+    std::queue<Operations> opQueue = readOperationsFile();
+    while (!opQueue.empty())
+    {
+        //Operations operation = opQueue.front();
+        //pool.submit(std::bind(&Base::doSequentially, this, std::move(operation)));
+        //opQueue.pop();
 
+
+                /*[=]{
+            Operations operation = opQueue.front();
+            int op = operation.getOperator();
+            int first = operation.getFirstOperand();
+            int second = operation.getSecondOperand();
+
+            switch (op)
+            {
+                case 0:
+                    _list[first] += _list[second];
+                    break;
+                case 1:
+                {
+                    std::swap(_list[first], _list[second]);
+                }
+                    break;
+                default:
+                    break;
+            }
+
+            opQueue.pop();
+        });*/
+    }
 }
 
 void Base::doOperationSeq(Operations oper)
@@ -113,13 +146,35 @@ void Base::doOperationSeq(Operations oper)
     {
         case 0:
             _list[first] += _list[second];
+            std::this_thread::sleep_for(std::chrono::milliseconds(5000));
             break;
         case 1:
         {
             std::swap(_list[first], _list[second]);
+            std::this_thread::sleep_for(std::chrono::milliseconds(5000));
         }
             break;
         default:
             break;
+    }
+}
+
+void Base::doOperationCon(Operations oper)
+{
+
+}
+
+void Base::play()
+{
+    thread_pool pool;
+
+    std::queue<Operations> opQueue = readOperationsFile();
+    while (!opQueue.empty())
+    {
+        Operations operation = opQueue.front();
+        pool.submit([=]{
+            doOperationSeq(operation);
+        });
+        opQueue.pop();
     }
 }
