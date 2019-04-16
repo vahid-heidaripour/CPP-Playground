@@ -21,7 +21,7 @@ int main(int argc, char* argv[])
         case 1:
         {
             std::cout << "\n\nConcurrent Operations:" << std::endl;
-            base.play();
+            base.doConcurrently();
             break;
         }
         default:

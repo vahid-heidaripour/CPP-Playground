@@ -12,11 +12,12 @@ Base::Base()
     printList();
 }
 
-void Operations::setOperation(int first, int second, int op)
+void Operations::setOperation(int first, int second, int op, int seqNo)
 {
     _firstOperand = first;
     _secondOperand = second;
     _oper = op;
+    _seqNo = seqNo;
 }
 
 void Base::resetList()
@@ -37,11 +38,12 @@ std::queue<Operations> Base::readOperationsFile()
     std::ifstream infile;
     infile.open("command_list");
 
+    int i = 0;
     int first, second, op;
     while (infile >> first >> second >> op)
     {
         Operations oper;
-        oper.setOperation(first, second, op);
+        oper.setOperation(first, second, op, i++);
         resQueue.push(oper);
     }
 
@@ -95,48 +97,12 @@ void Base::doSequentially()
 
     while (!opQueue.empty())
     {
-        doOperationSeq(opQueue.front());
+        doOperation(opQueue.front());
         opQueue.pop();
     }
 }
 
-void Base::doConcurrently()
-{
-    thread_pool_with_local_work_queue pool;
-    std::queue<Operations> opQueue = readOperationsFile();
-    while (!opQueue.empty())
-    {
-        //Operations operation = opQueue.front();
-        //pool.submit(std::bind(&Base::doSequentially, this, std::move(operation)));
-        //opQueue.pop();
-
-
-                /*[=]{
-            Operations operation = opQueue.front();
-            int op = operation.getOperator();
-            int first = operation.getFirstOperand();
-            int second = operation.getSecondOperand();
-
-            switch (op)
-            {
-                case 0:
-                    _list[first] += _list[second];
-                    break;
-                case 1:
-                {
-                    std::swap(_list[first], _list[second]);
-                }
-                    break;
-                default:
-                    break;
-            }
-
-            opQueue.pop();
-        });*/
-    }
-}
-
-void Base::doOperationSeq(Operations oper)
+void Base::doOperation(Operations oper)
 {
     int first = oper.getFirstOperand();
     int second = oper.getSecondOperand();
@@ -146,12 +112,12 @@ void Base::doOperationSeq(Operations oper)
     {
         case 0:
             _list[first] += _list[second];
-            std::this_thread::sleep_for(std::chrono::milliseconds(5000));
+            std::this_thread::sleep_for(std::chrono::milliseconds(100));
             break;
         case 1:
         {
             std::swap(_list[first], _list[second]);
-            std::this_thread::sleep_for(std::chrono::milliseconds(5000));
+            std::this_thread::sleep_for(std::chrono::milliseconds(100));
         }
             break;
         default:
@@ -159,12 +125,7 @@ void Base::doOperationSeq(Operations oper)
     }
 }
 
-void Base::doOperationCon(Operations oper)
-{
-
-}
-
-void Base::play()
+void Base::doConcurrently()
 {
     thread_pool pool;
 
@@ -173,7 +134,7 @@ void Base::play()
     {
         Operations operation = opQueue.front();
         pool.submit([=]{
-            doOperationSeq(operation);
+            doOperation(operation);
         });
         opQueue.pop();
     }

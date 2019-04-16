@@ -8,12 +8,13 @@
 class Operations
 {
 public:
-    void setOperation(int first, int second, int op);
+    void setOperation(int first, int second, int op, int seqNo);
     int getFirstOperand() {return _firstOperand;};
     int getSecondOperand() {return _secondOperand;};
     int getOperator() {return _oper;};
+    int getSeqNo() { return _seqNo;};
 private:
-    int _firstOperand, _secondOperand, _oper;
+    int _firstOperand, _secondOperand, _oper, _seqNo;
 };
 
 class Base
@@ -32,13 +33,11 @@ public:
 
     void doSequentially();
     void doConcurrently();
-    void play();
 
 private:
 
     std::array<int, 10> _list;
-    void doOperationSeq(Operations oper);
-    void doOperationCon(Operations oper);
+    void doOperation(Operations oper);
 };
 
 #endif // __BASE_H__
