@@ -4,6 +4,9 @@
 using namespace std;
 using namespace Records;
 
+
+// the code won't compile because of main function. 
+// remove this main or change its name
 int main()
 {
     cout << "Testing the Employee class." << endl;
