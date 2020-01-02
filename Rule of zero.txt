@@ -1,0 +1,8 @@
+When we use the old-style dynamically allocated memory we have to have five special 
+member functions: destructor, copy and move constructors, and copy and move assignment
+operators. This is the rule of five. However, in modern C++, we should adopt the rule
+of zero. The rule of zero states that you should design your classes in such a way that
+they do not require any of those five special member functions. How do you do that?
+Basically, you should avoid having any old-style dynamically allocated memory. Instead,
+use modern constructs such as Standard Library containers. For example, use a 
+vector<vector<int>> instead of the int**.
