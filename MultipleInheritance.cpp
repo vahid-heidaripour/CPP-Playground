@@ -18,7 +18,9 @@ public:
 
 class DogCat : public Dog, public Cat
 {
-
+public:
+	//another way to solve the problem is to have an eat() method here.
+	void eat() override { Dog::eat(); }
 };
 
 int main()
