@@ -1,0 +1,30 @@
+How to make a static library in C:
+
+1. create the C files and put the functions in them.
+For example, we have add.c file containing this code:
+int add(int a, int b)
+{
+    return a + b;
+}
+
+2. Now it's time to create the object files:
+gcc -c add.c   (-c means just compile it)
+
+3. Next, we create a archive with this command:
+ar rs libbasic.a add.o ...  (it's very important to start its name with lib and end it with .a)
+
+4. Now it's time to create the header file:
+for example, I have the basic.h file here:
+int add(int, int);  (here we only need the signature of the functions)
+
+5. Now we can remove .o files and .c files
+
+6. It's time to use our library. First, let's create the main.c file and compile it:
+gcc -c main.c
+
+7. Now, it's time to generate the output file:
+    a. we can use this command:
+        gcc -o test main.o libbasic.a
+    
+    b. or alternatively this command:
+        gcc -o test -L . main.o -lbasic  (basic is the name of our library, and . means it's available in current directory)

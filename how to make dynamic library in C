@@ -1,0 +1,20 @@
+First, we write our functions in file, for example add.c and mul.c
+
+Next, compile these files.
+gcc -fPIC -c add.c  (PIC stands for position independent code, which means we can call it in any address in memory)
+gcc -fPIC -c mul.c
+
+Now that we have two object files, it's time to create dynamic library:
+gcc -shared -o libbasic.so add.o mul.o
+
+Now we will generate executable file, but first let's generate the object file for main.c:
+gcc -c main.c
+
+gcc -o demo main.o libbasic.so
+
+Next, we need to install the dynamic library:
+mv libbasic.so /usr/lib/
+
+after that run ldconfig
+
+now we can execute our program.
