@@ -5,7 +5,7 @@
 #ifndef SDL_SCREEN_H
 #define SDL_SCREEN_H
 
-#include <SDL2/SDL.h>
+#include <SDL.h>
 
 namespace cpp_playground
 {
